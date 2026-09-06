@@ -1,0 +1,12 @@
+[bar]
+floating         = true
+border           = "#E8E6DC"
+border-alpha     = 0.22
+border-width     = 1
+background       = "#242522"
+background-alpha = 0.48
+text             = "#E8E6DC"
+active           = "#D97757"
+scale-with-font  = true
+size-horizontal  = 26
+size-vertical    = 28

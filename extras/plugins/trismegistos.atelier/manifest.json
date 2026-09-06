@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "trismegistos.atelier",
+  "name": "Claude Atelier Typography",
+  "version": "1.0.0",
+  "author": "trismegistos",
+  "description": "Theme-local shell typography; never changes terminal, editor or fontconfig fonts.",
+  "kinds": ["service"],
+  "entryPoints": {"service": "Service.qml"}
+}

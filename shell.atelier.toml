@@ -1,0 +1,25 @@
+[atelier]
+enabled = true
+ui-font = "Adwaita Sans"
+
+[font]
+# Shell only. Terminal/editor fonts are never changed.
+base-size = 16
+caption = 13
+body-small = 14
+body = 16
+subtitle = 17
+title = 18
+heading = 21
+
+[spacing]
+# A calm 4 px rhythm; Shibumi follows the existing readable font scale.
+control-gap = 8
+control-padding-x = 12
+control-padding-y = 8
+row-gap = 8
+row-padding-x = 16
+label-gap = 4
+panel-gap = 16
+panel-padding = 24
+popup-padding = 16

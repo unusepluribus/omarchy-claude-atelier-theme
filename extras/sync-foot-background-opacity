@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Omarchy's normal Foot hook updates colors; OSC 11 also updates background alpha.
+# Read the active theme on every switch so leaving Glass restores the next theme.
+set -euo pipefail
+
+theme_config="$HOME/.local/state/omarchy/current/theme/foot.ini"
+[[ -r $theme_config ]] || exit 0
+
+read -r alpha_percent background < <(awk -F= '
+  BEGIN { alpha = 1; in_colors = 0 }
+  /^[[:space:]]*\[/ { in_colors = ($0 ~ /^[[:space:]]*\[colors-dark\]/) }
+  in_colors && /^[[:space:]]*background[[:space:]]*=/ {
+    background = $2; gsub(/[[:space:]]/, "", background)
+  }
+  in_colors && /^[[:space:]]*alpha[[:space:]]*=/ { alpha = $2 + 0 }
+  END { printf "%.0f %s\n", alpha * 100, background }
+' "$theme_config")
+
+[[ $background =~ ^[[:xdigit:]]{6}$ ]] || exit 0
+[[ $alpha_percent =~ ^[0-9]+$ ]] || exit 0
+(( alpha_percent <= 100 )) || exit 0
+
+while read -r foot_pid; do
+  while read -r child_pid; do
+    terminal_path=$(readlink "/proc/$child_pid/fd/1" 2>/dev/null) || continue
+    [[ $terminal_path == /dev/pts/* && -w $terminal_path ]] || continue
+    printf '\033]11;[%s]#%s\033\\' "$alpha_percent" "$background" >"$terminal_path" || true
+  done < <(pgrep -P "$foot_pid" || true)
+done < <(pgrep -u "$(id -u)" -x foot || true)
