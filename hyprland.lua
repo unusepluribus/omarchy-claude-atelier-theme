@@ -20,6 +20,11 @@ hl.layer_rule({
   blur = true, blur_popups = true, ignore_alpha = 0.2,
 })
 -- Brief transitions, very small scale change, no bounce.
+-- Shibumi uses a separate layer namespace; include its attached drawer popups.
+hl.layer_rule({
+  match = { namespace = "^shibumi-bar$" },
+  blur = true, blur_popups = true, ignore_alpha = 0.2,
+})
 hl.animation({ leaf = "windowsIn", enabled = true, speed = 2.4, bezier = "easeOutQuint", style = "popin 97%" })
 hl.animation({ leaf = "windowsOut", enabled = true, speed = 1.6, bezier = "almostLinear", style = "popin 97%" })
 hl.animation({ leaf = "layersIn", enabled = true, speed = 2.0, bezier = "easeOutQuint", style = "fade" })

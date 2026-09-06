@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "trismegistos.atelier-workspaces",
   "name": "Claude Atelier Workspaces",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "trismegistos; based on TheTrueFerret Decent Workspaces",
   "license": "MIT",
   "description": "Subtle occupied workspaces with monochrome window glyphs and window-title tooltips.",

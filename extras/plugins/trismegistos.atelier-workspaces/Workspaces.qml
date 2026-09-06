@@ -21,6 +21,8 @@ BarWidget {
   // 0 = show an icon for every window; otherwise overflow collapses to "+N".
   readonly property int maxIcons: widgetState.value("maxIcons", 4)
   readonly property int maxWorkspaceId: widgetState.value("maxWorkspaceId", 10)
+  readonly property real widgetHeight: root.bar && "visualTokens" in root.bar
+    && root.bar.visualTokens ? root.bar.visualTokens.slotHeight : root.barSize
 
   WidgetState {
     id: widgetState
@@ -32,7 +34,7 @@ BarWidget {
   readonly property color fgColor: root.bar ? root.bar.barForeground : Color.foreground
   readonly property color bgColor: root.bar ? root.bar.background : Color.background
   readonly property color urgentColor: Color.urgent
-  readonly property real trailingGap: root.vertical ? 0 : Style.spaceReal(4)
+  readonly property real trailingGap: 0
 
   // --- which monitor is this bar on ----------------------------------------
   // One bar surface exists per monitor, so the widget reads its own screen off
@@ -173,13 +175,13 @@ BarWidget {
 
   function titlesFor(workspace) {
     if (!workspace) return "";
-    var lines = ["Arbeitsfläche " + workspace.id];
+    var lines = ["Workspace " + workspace.id];
     var tops = workspace.toplevels ? workspace.toplevels.values : [];
     for (var i = 0; i < tops.length; i++) {
       var title = String(root.windowTitle(tops[i]) || root.windowClass(tops[i]));
       lines.push(title.length > 85 ? title.slice(0, 82) + "…" : title);
     }
-    if (tops.length === 0) lines.push("Keine Fenster");
+    if (tops.length === 0) lines.push("No windows");
     return lines.join("\n");
   }
 
@@ -211,7 +213,7 @@ BarWidget {
     anchors.bottom: root.vertical ? undefined : parent.bottom
     anchors.topMargin: root.vertical ? Style.spaceReal(80) : Style.spaceReal(4)
     anchors.bottomMargin: root.vertical ? 0 : Style.spaceReal(4)
-    implicitWidth: grid.implicitWidth + Style.spaceReal(8)
+    implicitWidth: grid.implicitWidth + Style.spaceReal(4)
     implicitHeight: grid.implicitHeight + Style.spaceReal(8)
 
     MouseArea {
@@ -225,9 +227,9 @@ BarWidget {
     GridLayout {
       id: grid
       anchors.left: parent.left
-      anchors.leftMargin: Style.spaceReal(4)
+      anchors.leftMargin: Style.spaceReal(2)
       anchors.right: parent.right
-      anchors.rightMargin: Style.spaceReal(4)
+      anchors.rightMargin: Style.spaceReal(2)
       anchors.verticalCenter: parent.verticalCenter
       columns: root.vertical ? 1 : Math.max(1, root.visibleWorkspaces.length)
       columnSpacing: root.vertical ? 0 : Style.spaceReal(4)
@@ -248,7 +250,6 @@ BarWidget {
 
           radius: Style.spaceReal(8)
           color: pill.urgent ? root.urgentColor
-            : pill.active ? Util.alpha(root.fgColor, root.monitorFocused ? 0.08 : 0.04)
             : pill.hovered ? Util.alpha(root.fgColor, 0.045)
             : "transparent"
           opacity: pill.active ? 1 : 0.72
@@ -256,8 +257,8 @@ BarWidget {
           Layout.alignment: Qt.AlignVCenter
           Layout.fillHeight: true
           Layout.fillWidth: root.vertical
-          implicitWidth: root.vertical ? (root.barSize - Style.spaceReal(8)) : content.implicitWidth + Style.spaceReal(16)
-          implicitHeight: root.vertical ? content.implicitHeight + Style.spaceReal(10) : root.barSize - Style.spaceReal(8)
+          implicitWidth: root.vertical ? (root.barSize - Style.spaceReal(8)) : content.implicitWidth + Style.spaceReal(10)
+          implicitHeight: root.vertical ? content.implicitHeight + Style.spaceReal(10) : root.widgetHeight - Style.spaceReal(8)
 
           Rectangle {
             anchors.bottom: parent.bottom

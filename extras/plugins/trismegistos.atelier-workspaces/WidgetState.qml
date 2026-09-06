@@ -29,6 +29,7 @@ Item {
     }
 
     function load(raw) {
+        ready = false;
         try {
             cached = StateModel.decode(raw, keys);
         } catch (error) {
@@ -75,7 +76,10 @@ Item {
         onLoaded: root.load(text())
         onLoadFailed: function(error) {
             if (error === FileViewError.FileNotFound) root.load("");
-            else console.warn(root.widgetId + ": cannot read settings (" + error + ")");
+            else {
+                root.ready = false;
+                console.warn(root.widgetId + ": cannot read settings (" + error + ")");
+            }
         }
         onSaveFailed: function(error) {
             root.lastSaved = "";
