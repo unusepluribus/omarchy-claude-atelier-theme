@@ -1,9 +1,11 @@
 # Third-party notice
 
-The wallpaper's pixel wordmark is based on the Omarchy Ristretto wallpaper
+The earlier wallpaper's pixel wordmark was based on the Omarchy Ristretto wallpaper
 (`themes/ristretto/backgrounds/omarchy.png`) from
 https://github.com/basecamp/omarchy, used as an image-generation reference.
 Upstream license: https://github.com/basecamp/omarchy/blob/master/LICENSE.
+The current text-free wallpapers are AI edits of that earlier pair; the wordmark
+has been removed. The notice is retained to document the generation lineage.
 This is an independent theme adaptation, not an official Omarchy release.
 
 ## Omarchy — MIT license

@@ -1,21 +1,55 @@
-# Omarchy Quiet — Graphite
+# Claude Quiet — Graphite
 
-A restrained Omarchy pixel wordmark on an almost uniform matte field.
-The Graphite/Taupe pair is shared by Claude Glass and Claude Atelier, with the
-brighter variant reserved for their Heller siblings. It replaces the earlier
-glass-ribbon wallpapers.
+A completely text-free, low-contrast matte background with subtle warm tonal
+variation. No wordmark, logo, replacement symbol or decorative glass ribbons.
+Graphite is shared by Claude Glass and Claude Atelier; Taupe is used by their
+Heller siblings.
 
-AI-generated on 2026-09-06 using the **built-in image-generation tool**, visually
-reviewed, and copied without subsequent raster editing. Native resolution:
-**1586 × 992** (approximately 16:10), not 4K. Current asset:
-`backgrounds/1-omarchy-quiet-graphite.png`.
+Created and edited on 2026-09-06 with the **built-in image-generation tool**.
+The final edits remove the wordmarks from the previous pair while retaining
+their palette, framing and fine matte texture. Both results were visually
+reviewed and copied without further raster post-processing. Native resolution:
+**1586 × 992**, approximately 16:10, not 4K.
 
-The dark image uses Omarchy's Ristretto `omarchy.png` as a reference for its
-pixel wordmark. The brighter image uses the generated dark wallpaper as its
-edit target. This is an AI adaptation, not a claim of pixel-identical official
-artwork. Upstream attribution and MIT notice: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Current asset: `backgrounds/1-claude-quiet-graphite.png`.
 
-## Full prompt — Graphite
+The prior generation used an Omarchy Ristretto wordmark reference. That
+wordmark is no longer visible; the original provenance and
+[upstream license notice](THIRD_PARTY_NOTICES.md) are retained below.
+
+## Final edit prompt — Graphite
+
+Input: the previous dark wallpaper `1-omarchy-quiet-graphite.png`.
+
+```text
+Use case: precise-object-edit.
+Asset type: final minimalist Linux desktop wallpaper, landscape 16:10.
+Input image 1: edit target.
+Primary request: remove the entire centered OMARCHY wordmark completely. Seamlessly reconstruct the matte background underneath it so there is no trace of letters, shadow, outline, patch, seam or logo.
+Preserve: the full canvas dimensions and framing, the warm dark graphite, including the extremely subtle muted terracotta warmth at the bottom, the existing extremely restrained lighting and fine matte texture, the quiet even upper third, and the overall low-contrast minimalist composition.
+The result must be an elegant completely text-free background matching a Claude-colored glass desktop, not a desktop mockup.
+Constraints: change only the wordmark area as needed to remove it cleanly. Do not add a replacement symbol or focal object. Absolutely no text, logos, lettering, glyphs, monograms, watermark, frames, UI, waves, glass ribbons, spheres, bright highlights or new decorative shapes. Keep everything else unchanged.
+```
+
+## Final edit prompt — Taupe
+
+Input: the previous brighter wallpaper `1-omarchy-quiet-taupe.png`.
+
+```text
+Use case: precise-object-edit.
+Asset type: final minimalist Linux desktop wallpaper, landscape 16:10.
+Input image 1: edit target.
+Primary request: remove the entire centered OMARCHY wordmark completely. Seamlessly reconstruct the matte background underneath it so there is no trace of letters, shadow, outline, patch, seam or logo.
+Preserve: the full canvas dimensions and framing, the medium-dark warm taupe-grey, including the extremely subtle soft clay warmth at the bottom, the existing extremely restrained lighting and fine matte texture, the quiet even upper third, and the overall low-contrast minimalist composition.
+The result must be an elegant completely text-free background matching a Claude-colored glass desktop, not a desktop mockup.
+Constraints: change only the wordmark area as needed to remove it cleanly. Do not add a replacement symbol or focal object. Absolutely no text, logos, lettering, glyphs, monograms, watermark, frames, UI, waves, glass ribbons, spheres, bright highlights or new decorative shapes. Keep everything else unchanged.
+```
+
+## Earlier generation prompts — provenance only
+
+These describe the superseded wordmark versions, not the current images.
+
+### Full prompt — Graphite
 
 ```text
 Use case: style-transfer.
@@ -27,7 +61,7 @@ Style: precise pixel typography meets refined editorial minimalism, calm and pur
 Constraints: no glass ribbons, waves, spheres, landscape, mountains, grids, extra lines, bevels, embossed 3D text, glow, neon, blue, purple, cream or white surfaces, extra words, captions, UI, borders or watermark. Only the small existing OMARCHY wordmark and a quiet graphite background. This is the actual wallpaper, not a desktop mockup.
 ```
 
-## Full edit prompt — Taupe
+### Full edit prompt — Taupe
 
 ```text
 Use case: lighting-weather.

@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Remove the Omarchy wordmark from the Graphite/Taupe wallpapers, preserving the quiet matte palette and texture.
+- Use explicit Claude Quiet image filenames and update previews and edit provenance.
+
 ## v0.1.1 — 2026-09-06
 
 - Replace decorative glass ribbons with Omarchy Quiet: a small pixel wordmark on a matte Graphite/Taupe field.

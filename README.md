@@ -2,7 +2,7 @@
 
 A warm, dark glass-inspired desktop with ivory text and restrained terracotta accents. Built from the Claude Dark palette for **Omarchy 4, Quickshell and Lua-based Hyprland**.
 
-![Omarchy Quiet Graphite wallpaper](backgrounds/1-omarchy-quiet-graphite.png)
+![Claude Quiet Graphite — text-free wallpaper](backgrounds/1-claude-quiet-graphite.png)
 
 ## Design
 
@@ -56,7 +56,7 @@ TOML and Lua syntax were checked. More monitors and different Omarchy versions n
 
 ## Wallpaper, license and related themes
 
-The wallpaper is an AI-adapted Omarchy pixel wordmark on a restrained matte background, shared with the other Claude themes. Its native size and full prompts are in [WALLPAPER.md](WALLPAPER.md); it is not 4K. Theme code uses the MIT license. Omarchy attribution and its license notice are retained in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+The wallpaper is a completely text-free matte background in warm graphite, shared with the corresponding Claude themes. It was edited with AI image generation to remove the previous wordmark. Its native size, final edit prompts and earlier provenance are in [WALLPAPER.md](WALLPAPER.md); it is not 4K. Theme code uses the MIT license. The upstream notice for the earlier image reference is retained in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 [Claude Glass](https://github.com/unusepluribus/omarchy-claude-glass-theme) · [Glass Heller](https://github.com/unusepluribus/omarchy-claude-glass-heller-theme) · [Claude Atelier](https://github.com/unusepluribus/omarchy-claude-atelier-theme) · [Atelier Heller](https://github.com/unusepluribus/omarchy-claude-atelier-heller-theme)
 
