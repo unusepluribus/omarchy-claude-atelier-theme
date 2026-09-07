@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Add real desktop, floating-bar, workspace, controls and calendar screenshots, with neutral demo content and explicit optional-setup notes.
 - Remove the Omarchy wordmark from the Graphite/Taupe wallpapers, preserving the quiet matte palette and texture.
 - Use explicit Claude Quiet image filenames and update previews and edit provenance.
 
